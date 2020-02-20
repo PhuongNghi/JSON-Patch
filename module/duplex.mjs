@@ -3,8 +3,8 @@
  * (c) 2017 Joachim Wester
  * MIT license
  */
-import { _deepClone, _objectKeys, escapePathComponent, hasOwnProperty } from './helpers.mjs';
-import { applyPatch } from './core.mjs';
+import { _deepClone, _objectKeys, escapePathComponent, hasOwnProperty } from './helpers.js';
+import { applyPatch } from './core.js';
 var beforeDict = new WeakMap();
 var Mirror = /** @class */ (function () {
     function Mirror(obj) {
@@ -161,7 +161,7 @@ function _generate(mirror, obj, patches, path, invertible) {
     for (var t = 0; t < newKeys.length; t++) {
         var key = newKeys[t];
         if (!hasOwnProperty(mirror, key) && obj[key] !== undefined) {
-            patches.push({ op: "add", path: path + "/" + escapePathComponent(key), value: _deepClone(obj[key]) });
+            patches.push({ op: "add", path: path + "/" + escapePathComponent('-'), value: _deepClone(obj[key]) });
         }
     }
 }
