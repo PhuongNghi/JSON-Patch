@@ -3,8 +3,8 @@
  * (c) 2017 Joachim Wester
  * MIT license
  */
-import { _deepClone, _objectKeys, escapePathComponent, hasOwnProperty } from './helpers.js';
-import { applyPatch } from './core.js';
+import { _deepClone, _objectKeys, escapePathComponent, hasOwnProperty } from './helpers.mjs';
+import { applyPatch } from './core.mjs';
 var beforeDict = new WeakMap();
 var Mirror = /** @class */ (function () {
     function Mirror(obj) {
